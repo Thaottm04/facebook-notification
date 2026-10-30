@@ -1,0 +1,92 @@
+
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thông báo</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f0f2f5;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(0,0,0,0.5);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            z-index: 999;
+        }
+
+        .popup {
+            background: white;
+            width: 100%;
+            max-width: 360px;
+            padding: 25px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+        }
+
+        .popup h3 {
+            color: #1877f2;
+            margin-top: 0;
+        }
+
+        .popup p {
+            color: #606770;
+            line-height: 1.5;
+        }
+
+        .close-btn {
+            background: #1877f2;
+            color: white;
+            border: none;
+            padding: 11px 25px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 15px;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="overlay" id="overlay">
+        <div class="popup">
+            <h3>Thông báo</h3>
+
+            <p>
+                Phiên đăng nhập đã hết hạn.
+                Vui lòng kiểm tra lại phiên đăng nhập của bạn.
+            </p>
+
+            <button class="close-btn" onclick="closePopup()">
+                Đóng
+            </button>
+        </div>
+    </div>
+
+    <script>
+        function closePopup() {
+            document.getElementById("overlay").style.display = "none";
+        }
+    </script>
+
+</body>
+</html>
